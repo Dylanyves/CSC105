@@ -1,0 +1,11 @@
+.table {
+    /* border: 2px solid black; */
+}
+
+img {
+    object-fit: cover;
+}
+
+.link {
+    margin: 20px 0;
+}
