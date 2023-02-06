@@ -1,0 +1,142 @@
+* {
+    font-family: "Poppins", sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background: rgb(24, 24, 24);
+}
+
+.card {
+    position: absolute;
+    top: 10%;
+    right: 50%;
+    transform: translateX(50%);
+    /* border: 1px solid black; */
+    border-radius: 15px;
+    width: 300px;
+    margin-bottom: 200px;
+}
+
+.head {
+    /* background: rgb(116, 6, 116); */
+    background: rgb(66, 117, 66);
+    color: white;
+    border-radius: 15px 15px 0px 0px;
+    /* padding: 40px; */
+    padding: 40px 0 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.head .profile {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 100%;
+    /* border: 1px solid black; */
+}
+
+.head .profile-description h2 {
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.head .profile-description h2 span {
+    font-weight: 600;
+}
+
+.head .profile-description p {
+    width: 200px;
+    margin: auto;
+    font-size: 13px;
+    font-weight: 200;
+}
+
+.contact-container {
+    position: relative;
+    top: -20px;
+    float: right;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    column-gap: 25px;
+    /* border: white 1px solid; */
+}
+
+.contact-container li {
+    text-align: center;
+    display: inline;
+    background: white;
+    color: rgb(66, 117, 66);
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 0px 3px 10px 0px rgb(169, 169, 169);
+}
+
+.contact-container li:hover {
+    color: rgb(54, 96, 54);
+    transition-duration: 300ms;
+}
+
+.body {
+    background: white;
+    color: black;
+    padding: 10px 15px 1px 15px;
+    list-style: none;
+}
+
+.body li {
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgb(214, 214, 214);
+    margin: 5px;
+}
+
+.body small {
+    font-size: 12px;
+    color: gray;
+    font-weight: 400;
+}
+
+.body p {
+    font-size: 14px;
+    color: rgb(54, 96, 54);
+}
+
+.body a {
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.tail {
+    background: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 0px 0px 15px 15px;
+    padding: 15px 0 10px 0;
+}
+
+.tail li {
+    display: inline;
+    color: rgb(66, 117, 66);
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.tail li:hover {
+    color: rgb(54, 96, 54);
+    transition: 300ms;
+    animation: ease;
+}
