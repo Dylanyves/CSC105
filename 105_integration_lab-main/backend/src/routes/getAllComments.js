@@ -6,7 +6,6 @@ export const getAllComments = async (r, s) => {
   // TODO : CREATE COMMENT LOGIC
   const { response } = new ExpressTypeIntecepter(r, s).get();
   const { userId } = response.locals;
-
   const prisma = getPrisma();
   try {
     const comments = await prisma.comment.findMany({

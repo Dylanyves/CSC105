@@ -1,18 +1,48 @@
 import { Button, Card, TextField, Typography } from '@mui/material';
 import React, { useCallback, useState } from 'react';
+import Axios from '../../../../share/AxiosInstance';
+import Cookies from 'js-cookie';
 
 const CommentCard = ({ comment = { id: -1, msg: '' } }) => {
   const [isConfirm, setIsConfirm] = useState(false);
   const [functionMode, setFunctionMode] = useState('update');
   const [msg, setMsg] = useState(comment.msg);
 
+  const userToken = Cookies.get('UserToken');
+
   const submit = useCallback(() => {
     if (functionMode === 'update') {
       // TODO implement update logic
-      console.log('update');
+
+      try {
+        // 2. call API to update note...
+        Axios.patch(
+          '/comment',
+          {
+            commentId: comment.id,
+            text: msg,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${userToken}`,
+            },
+          }
+        ).then((res) => {
+          if (res.data.success) {
+            console.log('updated');
+          }
+        });
+      } catch (err) {
+        console.log(err);
+      }
     } else if (functionMode === 'delete') {
       // TODO implement delete logic
-      console.log('delete');
+      Axios.delete('/comment', {
+        headers: { Authorization: `Bearer ${userToken}` },
+        data: { commentId: comment.id },
+      }).then((res) => {
+        console.log('success');
+      });
     } else {
       // TODO setStatus (snackbar) to error
       console.log('error');
